@@ -1,0 +1,639 @@
+html {
+  scroll-behavior: smooth; 
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Navigation Bar Styling */
+.navbar {
+  background-color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  font-family: 'Roboto', sans-serif;
+  width: 100%;
+  max-width: 1200px; /* Menambahkan lebar maksimum */
+  margin: 0 auto; /* Memastikan navbar berada di tengah */
+  position: relative;
+  flex-wrap: wrap; /* Membuat item menyesuaikan ruang */
+}
+
+
+/* Logo Styling */
+.logo {
+  flex-shrink: 0;
+}
+
+.logo-img {
+  width: 100px; /* Sesuaikan ukuran logo */
+  height: auto;
+  display: block;
+}
+/* Navigation Links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap; /* Agar link dapat terbungkus jika ruang tidak mencukupi */
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #b3b3b3;
+  font-size: 1rem;
+  padding-bottom: 5px;
+  transition: color 0.3s;
+}
+
+/* Hover Effect */
+.nav-links a:hover {
+  color: #FFDD44;
+}
+
+/* Download Resume Button */
+.download-btn {
+  background-color: #FFDD44;
+  color: black;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.download-btn:hover {
+  background-color: black;
+  color: white;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .nav-links {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background-color: black;
+      padding: 10px 0;
+      z-index: 100;
+  }
+
+  .nav-links.show {
+      display: flex;
+  }
+
+  .navbar-toggle {
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+  }
+
+  .bar {
+      height: 3px;
+      width: 25px;
+      background-color: #b3b3b3;
+      margin: 4px 0;
+      transition: 0.3s;
+  }
+
+  /* Sesuaikan ukuran tombol download untuk perangkat kecil */
+  .download-btn {
+      padding: 8px 16px;
+      font-size: 0.9rem;
+  }
+}
+
+/* Menambahkan gaya untuk tombol toggle pada layar besar */
+@media (min-width: 769px) {
+  .navbar-toggle {
+      display: none;
+  }
+}
+
+body, ul {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: black; /* Black background */
+  color: white; /* White font */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header Styling */
+header {
+  background-color: black;
+  color: white;
+  padding: 10px 0;
+}
+
+header nav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+}
+
+header nav ul li {
+  margin: 0 15px;
+}
+
+header nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+header nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Main Layout */
+main {
+  flex: 1;
+  padding: 20px;
+  background-color: black; /* Black background for the main section */
+}
+
+/* Section and General Styling */
+h1, h2, h3 {
+  border-bottom: 3px solid #FFD700; /* Ketebalan dan warna garis */
+  padding-bottom: 5px; /* Jarak antara teks dan garis */
+  margin-bottom: 20px; /* Jarak antara heading dan elemen di bawahnya */
+  display: inline-block; /* Agar garis mengikuti panjang teks */
+  text-align: center;
+}
+
+
+h4 {
+  font-size: 26px;
+  text-align: center; /* Center all h1, h2, h3 elements */
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+p {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  unicode-bidi: isolate;
+  text-align: justify; /* Justify text */
+  margin: 0 20px; /* Adjust margins for paragraphs */
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+
+}
+
+/* About Section */
+/* Section Layout */
+#about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  #about {
+    flex-direction: row; /* Gambar di sebelah kiri dan teks di sebelah kanan */
+    align-items: flex-start;
+  }
+}
+
+.profile-picture {
+  width: 150px;
+  height: 150px;
+  object-fit: cover; /* Gambar tetap proporsional */
+  border-radius: 50%; /* Gambar bulat */
+  margin-bottom: 20px;
+}
+
+@media (min-width: 768px) {
+  .profile-picture {
+    margin-right: 20px; /* Tambahkan margin kanan pada layar besar */
+    margin-bottom: 0; /* Hilangkan margin bawah pada layar besar */
+  }
+}
+
+/* Teks paragraf dalam section About Me */
+#about p {
+  text-align: justify; /* Justify text */
+  margin: 0 20px; /* Tambahkan margin untuk jarak antara teks dan gambar */
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+
+}/* About Section */
+.about-section {
+  background-color: black;
+  color: white;
+  padding: 50px 20px;
+}
+
+.about-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .about-container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.profile-info {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+@media (min-width: 768px) {
+  .profile-info {
+    text-align: left;
+    margin-right: 40px;
+  }
+}
+
+.profile-picture {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+
+@media (min-width: 768px) {
+  .social-icons {
+    justify-content: flex-start;
+  }
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.social-icons img {
+  width: 30px;
+  height: 30px;
+  filter: invert(100%); /* Warna putih pada ikon */
+  transition: transform 0.3s ease;
+}
+
+.social-icons img:hover {
+  transform: scale(1.1); /* Efek zoom saat hover */
+}
+.about-text {
+  max-width: 600px;
+}
+
+.about-text h2 {
+  margin-bottom: 10px;
+  position: relative;
+}
+
+
+.about-text p {
+  font-size: 18px;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+
+/* Featured Image Styling */
+.featured-image {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  display: block;
+  margin: 20px auto;
+  border-radius: 8px;
+}
+
+article h3 {
+  margin-bottom: 10px;
+}
+/* General styling for the skills section */
+#skills {
+  background-color: black; /* Dark background for skills section */
+  color: white; /* White text */
+  padding: 40px 20px; /* Padding for section */
+  border-radius: 10px; /* Rounded corners */
+  text-align: center;
+}
+
+/* Container for skills cards */
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Responsive grid */
+  gap: 20px;
+  justify-items: center;
+  padding: 20px;
+}
+
+.card {
+  background-color: black; /* Sesuaikan dengan warna background dari gambar */
+  border-radius: 10px;
+  text-align: center;
+  padding: 20px;
+  width: 150px; /* Tetap atur lebar untuk menjaga ukuran */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px); /* Hover effect */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Shadow effect */
+}
+
+.card img {
+  width: 80px;
+  height: auto;
+}
+
+.card-title {
+  color: white; /* Sesuaikan dengan warna teks dari gambar */
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .skills-container {
+    grid-template-columns: repeat(2, 1fr); /* Dua kolom pada layar kecil */
+  }
+
+  .card {
+    width: 100%; /* Lebar penuh pada layar kecil */
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-container {
+    grid-template-columns: 1fr; /* Satu kolom pada layar sangat kecil */
+  }
+}
+
+/* Contact Section Links */
+#contact a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#contact a:hover {
+  text-decoration: underline;
+}
+
+/* Footer Styling */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+}
+
+footer p {
+  margin: 0;
+  text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  main {
+    flex-direction: column;
+  }
+}
+#projects {
+  text-align: center;
+}
+
+/* Projects Container */
+.projects-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 1200px; /* Optional: limit the width */
+  padding: 20px;
+}
+
+.project-card {
+  position: relative;
+  background-color: black;
+  color: white;
+  border-radius: 8px;
+  padding: 20px;
+  flex: 1 1 48%;
+  margin: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  transition: box-shadow 0.3s;
+  text-align: center; /* Center all text within project cards */
+}
+
+/* Featured Image Styling */
+.project-card img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+/* Project Title and Description */
+.project-title {
+  margin-top: 15px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  text-align: center; /* Center text */
+}
+
+.project-description {
+  margin-top: 10px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  text-align: justify; /* Center text */
+}
+
+/* Button Styling */
+.detail-button {
+  display: inline-block;
+  background-color: yellow;
+  color: black;
+  padding: 10px 20px;
+  margin-top: 15px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 4px;
+  position: relative;
+  z-index: 2;
+  transition: background-color 0.3s ease;
+}
+
+.detail-button:hover {
+  background-color: #ffc107; /* Darker yellow on hover */
+}
+
+/* Hover effect for the entire card */
+.project-card:hover .project-title,
+.project-card:hover .project-description {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.project-card:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Increased shadow on hover */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .project-card {
+    flex: 0 1 100%; /* Stack cards on small screens */
+  }
+}
+/* Certificates Container */
+.certificates-container {
+  display: grid; /* Use grid layout */
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid */
+  gap: 20px; /* Space between cards */
+  margin: 20px 0; /* Add margin around the container */
+  background-color: black; /* Temporary background color for visibility */
+}
+
+/* Certificate Card Styling */
+.certificate-card {
+  position: relative; /* Position relative for absolute positioning of inner content */
+  overflow: hidden; /* Hide overflow for smooth effect */
+  background-color: black; /* Light background for the card */
+  color: black; /* Black text */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow effect */
+  text-align: center; /* Center align text */
+}
+
+/* Certificate Content */
+.certificate-content {
+  opacity: 0; /* Initially hidden */
+  position: absolute; /* Position absolute to overlap */
+  top: 0; /* Align to the top */
+  left: 0; /* Align to the left */
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  display: flex; /* Flex for centering */
+  flex-direction: column; /* Column layout */
+  justify-content: center; /* Center vertically */
+  align-items: center; /* Center horizontally */
+  transition: opacity 0.3s; /* Smooth transition */
+  background: yellow(255, 255, 255, 0.9); /* Semi-transparent background */
+}
+
+/* Show content on hover */
+.certificate-card:hover .certificate-content {
+  opacity: 1; /* Show on hover */
+}
+
+/* Certificate Image Styling */
+.certificate-image {
+  max-width: 100%; /* Responsive image */
+  border-radius: 4px; /* Match card corners */
+  margin-bottom: 10px; /* Space below the image */
+}
+
+/* Centering the section title */
+.text-center {
+  text-align: center;
+  margin-bottom: 20px; /* Space below title */
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .certificate-card {
+    flex: 0 1 calc(100% - 20px); /* Stack cards on small screens */
+  }
+}
+/* Contact Section Styles */
+#contact {
+  background-color: black;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.webform-label {
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: white;
+}
+
+.form-control {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+.form-control:focus {
+  border-color: white;
+  outline: none;
+}
+
+button {
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #ffc107;
+  color: black;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: black; 
+  color: white;            
+}
+
+
